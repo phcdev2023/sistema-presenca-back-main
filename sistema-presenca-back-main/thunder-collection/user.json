@@ -1,0 +1,58 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "User API",
+  "dateExported": "2025-04-01T20:00:44.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Register",
+      "method": "POST",
+      "url": "http://localhost:3000/api/auth/register",
+      "contentType": "application/json",
+      "body": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "password": "123456",
+        "course": "Computer Science",
+        "registration": "20230001",
+        "role": "student"
+      }
+    },
+    {
+      "name": "Login",
+      "method": "POST",
+      "url": "http://localhost:3000/api/auth/login",
+      "contentType": "application/json",
+      "body": {
+        "email": "john@example.com",
+        "password": "123456"
+      }
+    },
+    {
+      "name": "Get User Profile",
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/profile/{{userId}}"
+    },
+    {
+      "name": "Update User Profile",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/users/profile/{{userId}}",
+      "contentType": "application/json",
+      "body": {
+        "name": "John Updated",
+        "course": "Information Systems"
+      }
+    },
+    {
+      "name": "Get All Users",
+      "method": "GET",
+      "url": "http://localhost:3000/api/users"
+    },
+    {
+      "name": "Get Users by Type",
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/type/{{role}}"
+    }
+  ]
+}

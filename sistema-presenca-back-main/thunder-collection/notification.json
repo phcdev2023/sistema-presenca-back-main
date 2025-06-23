@@ -1,0 +1,45 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Notification API",
+  "dateExported": "2025-04-01T20:05:53.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Create Notification",
+      "method": "POST",
+      "url": "http://localhost:3000/api/notifications",
+      "contentType": "application/json",
+      "body": {
+        "userId": "{{userId}}",
+        "title": "Lembrete de Evento",
+        "message": "O evento 'Aula de Dev Web II' começa em 1 hora",
+        "type": "reminder",
+        "relatedTo": {
+          "type": "event",
+          "id": "{{eventId}}"
+        }
+      }
+    },
+    {
+      "name": "Get User Notifications",
+      "method": "GET",
+      "url": "http://localhost:3000/api/notifications/user/{{userId}}"
+    },
+    {
+      "name": "Mark as Read",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/notifications/{{notificationId}}/read"
+    },
+    {
+      "name": "Mark All as Read",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/notifications/user/{{userId}}/read-all"
+    },
+    {
+      "name": "Delete Notification",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/notifications/{{notificationId}}"
+    }
+  ]
+}

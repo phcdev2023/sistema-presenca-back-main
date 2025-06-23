@@ -1,0 +1,63 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Attendance API",
+  "dateExported": "2025-04-01T20:00:44.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Check-in",
+      "method": "POST",
+      "url": "http://localhost:3000/api/attendance/check-in",
+      "contentType": "application/json",
+      "body": {
+        "eventId": "{{eventId}}",
+        "userId": "{{userId}}",
+        "checkInMethod": "qr",
+        "location": {
+          "lat": -22.2859,
+          "lng": -45.6969
+        },
+        "deviceInfo": {
+          "userAgent": "Mozilla/5.0...",
+          "platform": "Web",
+          "browser": "Chrome"
+        }
+      }
+    },
+    {
+      "name": "Get Event Attendance",
+      "method": "GET",
+      "url": "http://localhost:3000/api/attendance/event/{{eventId}}"
+    },
+    {
+      "name": "Get User Attendance",
+      "method": "GET",
+      "url": "http://localhost:3000/api/attendance/user/{{userId}}"
+    },
+    {
+      "name": "Sync Offline Attendance",
+      "method": "POST",
+      "url": "http://localhost:3000/api/attendance/sync",
+      "contentType": "application/json",
+      "body": {
+        "attendances": [
+          {
+            "eventId": "{{eventId}}",
+            "userId": "{{userId}}",
+            "checkInMethod": "qr",
+            "checkInTime": "2025-04-02T10:30:00Z",
+            "location": {
+              "lat": -22.2859,
+              "lng": -45.6969
+            },
+            "deviceInfo": {
+              "platform": "Mobile",
+              "offline": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

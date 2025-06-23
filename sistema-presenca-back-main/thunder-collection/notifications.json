@@ -1,0 +1,49 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Notifications API",
+  "dateExported": "2025-04-01T21:09:17.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Send Event Reminder",
+      "method": "POST",
+      "url": "http://localhost:3000/api/notifications/event/{{eventId}}/remind",
+      "contentType": "application/json",
+      "body": {}
+    },
+    {
+      "name": "Send Attendance Confirmation",
+      "method": "POST",
+      "url": "http://localhost:3000/api/notifications/attendance/confirm",
+      "contentType": "application/json",
+      "body": {
+        "userId": "{{userId}}",
+        "eventId": "{{eventId}}"
+      }
+    },
+    {
+      "name": "Send Update Notification",
+      "method": "POST",
+      "url": "http://localhost:3000/api/notifications/event/{{eventId}}/update",
+      "contentType": "application/json",
+      "body": {
+        "userId": "{{userId}}",
+        "message": "Event details have been updated"
+      }
+    },
+    {
+      "name": "Mark Notification as Read",
+      "method": "PATCH",
+      "url": "http://localhost:3000/api/notifications/{{notificationId}}/read",
+      "contentType": "application/json",
+      "body": {}
+    },
+    {
+      "name": "Get User Notifications",
+      "method": "GET",
+      "url": "http://localhost:3000/api/notifications/user/{{userId}}",
+      "contentType": "application/json"
+    }
+  ]
+}

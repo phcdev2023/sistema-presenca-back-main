@@ -1,0 +1,75 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Event API",
+  "dateExported": "2025-04-01T20:05:53.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "Create Event",
+      "method": "POST",
+      "url": "http://localhost:3000/api/events",
+      "contentType": "application/json",
+      "body": {
+        "title": "Dev Web II - Aula 1",
+        "description": "Introdução ao Node.js",
+        "type": "lecture",
+        "category": "academic",
+        "location": "Sala 101",
+        "startDate": "2025-04-10T19:00:00.000Z",
+        "endDate": "2025-04-10T22:00:00.000Z",
+        "maxAttendees": 30,
+        "createdBy": "{{userId}}"
+      }
+    },
+    {
+      "name": "Update Event",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/events/{{eventId}}",
+      "contentType": "application/json",
+      "body": {
+        "title": "Dev Web II - Aula 1 (Atualizada)",
+        "description": "Introdução ao Node.js e Express"
+      }
+    },
+    {
+      "name": "Delete Event",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/events/{{eventId}}"
+    },
+    {
+      "name": "Get Event by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/api/events/{{eventId}}"
+    },
+    {
+      "name": "Get All Events",
+      "method": "GET",
+      "url": "http://localhost:3000/api/events"
+    },
+    {
+      "name": "Get Events by Creator",
+      "method": "GET",
+      "url": "http://localhost:3000/api/events/creator/{{creatorId}}"
+    },
+    {
+      "name": "Register for Event",
+      "method": "POST",
+      "url": "http://localhost:3000/api/events/{{eventId}}/register",
+      "contentType": "application/json",
+      "body": {
+        "userId": "{{userId}}"
+      }
+    },
+    {
+      "name": "Get Event QR Code",
+      "method": "GET",
+      "url": "http://localhost:3000/api/events/{{eventId}}/qrcode"
+    },
+    {
+      "name": "Get Event Attendees",
+      "method": "GET",
+      "url": "http://localhost:3000/api/events/{{eventId}}/attendees"
+    }
+  ]
+}
